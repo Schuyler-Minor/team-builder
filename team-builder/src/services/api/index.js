@@ -10,6 +10,10 @@ export function getTeamMember(id) {
   return axios.get(`${apiUrl}/team-member/${id}`);
 }
 
+export function deleteTeamMember(id) {
+  return axios.delete(`${apiUrl}/team-member/${id}`);
+}
+
 export function addTeamMember(person) {
   return axios.post(`${apiUrl}/team-member`, person);
 }
@@ -19,10 +23,12 @@ export function editTeamMember(id, person) {
 }
 
 const api = {
+  // getTeamMembers: getTeamMembers,
   getTeamMembers,
   getTeamMember,
   addTeamMember,
-  editTeamMember
+  editTeamMember,
+  deleteTeamMember
 };
 
 export default api;

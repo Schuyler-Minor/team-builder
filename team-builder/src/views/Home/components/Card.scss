@@ -1,0 +1,21 @@
+.card {
+    max-width: 500px;
+    border: 1px solid #1A1A1A;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px;
+    position: relative;
+
+    .delete {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 1.6rem;
+        transition: 0.3s color;
+        cursor: pointer;
+
+        &:hover {
+            color: red;
+        }
+    }
+}

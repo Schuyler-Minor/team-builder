@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Form = (props) => {
   console.log(props);
-  const { submitPerson, initialPerson, buttonText, history } = props;
+  const { submitPerson, initialPerson, buttonText } = props;
   const [person, setPerson] = useState(initialPerson || { name: "", email: "", role: ""});
   const inputPerson = event => {
     setPerson({...person, [event.target.name]: event.target.value});
   };
 
+  useEffect(() => {
+    console.log("first render");
+  }, []);
+
   const onSubmit = event => {
     event.preventDefault();
     submitPerson(person);
     setPerson({ name: "", email: "", role: ""});
-    history.push("/");
   };
 
   return (
