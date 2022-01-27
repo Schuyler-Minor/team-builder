@@ -17,22 +17,38 @@ const Form = (props) => {
   };
   return (
     <form onSubmit={handleSubmit}>
+      <label>
       <input placeholder="name"
              value={person.name}
              name="name"
              onChange={handleChange}
       />
+      </label>
+      <label>
       <input placeholder="email"
              value={person.email}
              name="email"
              onChange={handleChange}
       />
+      </label>
+      <label>
       <input placeholder="role"
              value={person.role}
              name="role"
              onChange={handleChange}
       />
+      </label>
+      <label>
+        <input 
+        placeholder='password'
+        name='password'
+        type='password'
+        />
+      </label>
+      <label>
       <button type="submit">{buttonText}</button>
+      </label>
+      
     </form>
   );
 };
