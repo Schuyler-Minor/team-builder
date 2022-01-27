@@ -1,7 +1,7 @@
 
 describe("Team App", () => {
     beforeEach(() => {
-        cy.visit("http://localhost:3000");
+        cy.visit("http://localhost:3000/add");
     })
 
     const nameInput = () => cy.get('input[name=name]');
@@ -20,4 +20,19 @@ describe("Team App", () => {
         passwordInput().should('exist');
         submitBtn().should('exist');
     })
+
+    describe("filling out inputs and canceling", () => {
+        it("can type in the inputs", () => {
+            nameInput()
+            .should("have.value", "")
+            .type("Slow down!")
+            .should("have.value", "Slow down!");
+
+            emailInput()
+            .should("have.value", "")
+            .type("skyhigh@gmail.com")
+            .should("have.value", "skyhigh@gmail.com");
+        })
+    })
+
 })

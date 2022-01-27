@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const Form = (props) => {
   console.log(props);
   // const setPeople = props.setPeople;
-  const { submitPerson, initialPerson, buttonText, history } = props;
+  const { submitPerson, initialPerson, buttonText, history, disabled } = props;
   // const [person, setPerson] = useState({name: "", email: "", role: ""});
   const [person, setPerson] = useState(initialPerson || {name: "", email: "", role: ""});
   const handleChange = event => {
@@ -46,7 +46,7 @@ const Form = (props) => {
         />
       </label>
       <label>
-      <button type="submit">{buttonText}</button>
+      <button type="submit" disabled={disabled}>{buttonText}</button>
       </label>
       
     </form>
